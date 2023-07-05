@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return view('pages.home');
+});
+
 Route::prefix('stisla')->group(function () {
     // Dashboard
     Route::redirect('/', '/stisla/dashboard-general-dashboard');
