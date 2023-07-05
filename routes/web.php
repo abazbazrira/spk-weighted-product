@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CriteriaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function() {
     return view('pages.home');
 });
+
+Route::get('/', [CriteriaController::class, 'index'])->name('criteria.index');
 
 Route::prefix('stisla')->group(function () {
     // Dashboard
