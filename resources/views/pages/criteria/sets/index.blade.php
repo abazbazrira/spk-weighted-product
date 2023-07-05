@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Criteria')
+@section('title', 'Sets of Criteria')
 
 @push('style')
 <!-- CSS Libraries -->
@@ -17,7 +17,7 @@
 @section('main')<div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Criteria</h1>
+            <h1>{{ $criteria }}</h1>
         </div>
 
         <div class="section-body">
@@ -32,8 +32,8 @@
                                             <th class="text-center">
                                                 #
                                             </th>
-                                            <th>Criteria</th>
-                                            <th>Weight</th>
+                                            <th>Name</th>
+                                            <th>Value</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -43,10 +43,9 @@
                                         @foreach ($datas as $data)
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ $data->criteria }}</td>
-                                            <td>{{ $data->weight }}</td>
+                                            <td>{{ $data->member_names }}</td>
+                                            <td>{{ $data->member_value }}</td>
                                             <td>
-                                                <a href="{{ route('criteria.sets', ['id' => $data->id]) }}"><button class="btn btn-success">Sets</button></a>
                                                 <button class="btn btn-danger">Delete</button>
                                             </td>
                                         </tr>

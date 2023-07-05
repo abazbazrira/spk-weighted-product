@@ -18,7 +18,10 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
-Route::get('/', [CriteriaController::class, 'index'])->name('criteria.index');
+Route::prefix('criteria')->group(function () {
+    Route::get('/', [CriteriaController::class, 'index'])->name('criteria.index');
+    Route::get('/sets/{id}', [CriteriaController::class, 'sets_of_criteria'])->name('criteria.sets');
+});
 
 Route::prefix('stisla')->group(function () {
     // Dashboard
