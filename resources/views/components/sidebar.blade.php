@@ -11,6 +11,9 @@
             <li class="{{ Request::is('criteria') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('criteria.index') }}"><i class="far fa-square"></i> <span>Criteria</span></a>
             </li>
+            <li class="{{ Request::is('alternative') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('alternative.index') }}"><i class="far fa-square"></i> <span>Alternative</span></a>
+            </li>
         </ul>
     </aside>
 </div>

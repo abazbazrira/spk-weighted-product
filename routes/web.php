@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlternativeController;
 use App\Http\Controllers\CriteriaController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,8 @@ Route::prefix('criteria')->group(function () {
     Route::get('/', [CriteriaController::class, 'index'])->name('criteria.index');
     Route::get('/sets/{id}', [CriteriaController::class, 'sets_of_criteria'])->name('criteria.sets');
 });
+
+Route::get('/alternative', [AlternativeController::class, 'index'])->name('alternative.index');
 
 Route::prefix('stisla')->group(function () {
     // Dashboard

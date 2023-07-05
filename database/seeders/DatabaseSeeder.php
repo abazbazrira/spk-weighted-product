@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CriteriasTableSeeder::class);
         $this->call(SetsOfCriteriasTableSeeder::class);
+        $this->call(AlternativesTableSeeder::class);
     }
 }
