@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlternativeController;
 use App\Http\Controllers\CriteriaController;
+use App\Http\Controllers\WeightedProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,11 @@ Route::prefix('criteria')->group(function () {
     Route::get('/sets/{id}', [CriteriaController::class, 'sets_of_criteria'])->name('criteria.sets');
 });
 
-Route::get('/alternative', [AlternativeController::class, 'index'])->name('alternative.index');
+Route::get('alternative', [AlternativeController::class, 'index'])->name('alternative.index');
+
+Route::prefix('dss')->group(function () {
+    Route::get('wp', [WeightedProductController::class, 'index'])->name('dss.wp');
+});
 
 Route::prefix('stisla')->group(function () {
     // Dashboard

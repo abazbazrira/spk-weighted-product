@@ -15,5 +15,11 @@
                 <a class="nav-link" href="{{ route('alternative.index') }}"><i class="far fa-square"></i> <span>Alternative</span></a>
             </li>
         </ul>
+        <ul class="sidebar-menu">
+            <li class="menu-header">DSS</li>
+            <li class="{{ Request::is('dss/wp') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dss.wp') }}"><i class="far fa-square"></i> <span>Weighted Product</span></a>
+            </li>
+        </ul>
     </aside>
 </div>
